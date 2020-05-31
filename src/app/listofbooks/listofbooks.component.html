@@ -1,0 +1,41 @@
+<style>
+    .zoom {
+      padding: 50px;
+      /* background-color: green; */
+      transition: transform .2s; /* Animation */
+      /* width: 200px; */
+      /* height: 200px; */
+      margin: 0 auto;
+    }
+    
+    .zoom:hover {
+      transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    </style>
+<div class="container" style="margin-left: 00px;">
+        <div class="row">
+          
+            <div class="col-5 zoom" *ngFor="let book of listOfBooks;index as i" style="background-color: white;margin-bottom: 25px;margin-right: 0px;">
+                <h6 style="padding: 10px;margin-top: 5px;"><a href={{book.link}}>{{book.title}}</a></h6>
+                <img class="card-img-top" src={{book.imageLink}} alt="Card image cap" style="height:100px;width:100px;float: left;">
+
+                <div style="float: right;width: 250px;justify-content: left;">
+                    <p style="text-align: left;font-size: 15px;"><b>Author : </b>{{book.authors}}</p>
+                    <p style="text-align: left;;font-size: 15px;"><b>Publisher : </b>{{book.publisher}}</p>
+                    <p style="text-align: left;font-size: 15px;"><b>Published : </b>{{book.publishedDate}}</p>    
+                </div>
+
+            </div>
+
+              
+        </div>
+
+        <div class="row" *ngIf="!found" style="margin-left: 400px;color: grey;font-weight: lighter;">
+            Nothing to show...
+        </div>
+        
+        <div class="row" *ngIf="loading" style="margin-left: 350px;">
+            <img src="assets\loading.gif" alt="">
+        </div>
+        <div id="loading"></div>
+</div>

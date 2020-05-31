@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BookFinder"
+    }
+  },
+  "defaultProject": "BookFinder",
+  "cli": {
+    "analytics": "c69810dd-b06a-40e6-b1f1-e675e4b546da"
+  }
 }
